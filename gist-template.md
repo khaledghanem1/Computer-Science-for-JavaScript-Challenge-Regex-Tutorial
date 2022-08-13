@@ -101,7 +101,16 @@ This operator is very useful when we need to extract information from strings or
 | a(?\<foo>bc)      | using ?<foo> we put a name to the group  |
 
 
-### Bracket Expressions
+### Bracket Expressions — []
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| [abc]     | matches a string that has either an a or a b or a c -> is the same as a|b|c       |
+| [a-c]   | a string that represents a single hexadecimal digit, case insensitively |
+| [a-fA-F0-9]      | a string that represents a single hexadecimal digit, case insensitively  |
+| [0-9]%      |  a string that has a character from 0 to 9 before a % sign
+  |
+| [^a-zA-Z]     | a string that has not a letter from a to z or from A to Z. In this case the ^ is used as negation of the expression  |
 
 ### Greedy and Lazy Match
 
