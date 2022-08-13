@@ -108,18 +108,12 @@ This operator is very useful when we need to extract information from strings or
 | [abc]     | matches a string that has either an a or a b or a c -> is the same as a|b|c       |
 | [a-c]   | a string that represents a single hexadecimal digit, case insensitively |
 | [a-fA-F0-9]      | a string that represents a single hexadecimal digit, case insensitively  |
-| [0-9]%      |  a string that has a character from 0 to 9 before a % sign
-  |
+| [0-9]%      |  a string that has a character from 0 to 9 before a % sign |
 | [^a-zA-Z]     | a string that has not a letter from a to z or from A to Z. In this case the ^ is used as negation of the expression  |
-
-### Greedy and Lazy Match
-
-### Boundaries
-
-### Back-references
-
-### Look-ahead and Look-behind
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Khaled Ghanem is a Full-Stack Web Developer and Quality Assurance Analyst. He is constantly intrigued with technology and always wants to learn more and share his knowledge with everyone. Feel free to connect with him on Github or LinkedIn!
+
+- [Github](https://github.com/khaledghanem1)
+- [LinkedIn](https://www.linkedin.com/in/ghanemk/)
