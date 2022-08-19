@@ -1,12 +1,13 @@
 # Regex-Tutorial 
 
 In this tutorial were going to dive into regex, explaining some of its components to upcoming developers. This tutorial is made to students to simplfy search pattern of regex. Clicking on the links in the table of contents will show you a detailed explantion of the component. 
+
 <br>
 
 ## Summary
-Regular expressions, or regex for short, are a series of special characters that define a search pattern. Take the following example of a regular expression, which we’ll call “Matching a Username”:
+Throughout this tutorial, you will learn more about the basics of Regex, and we will deep dive into "How to Match an Email" using Regex.
 ```
-/^[a-z0-9_-]{3,16}$/
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 ```
 <br>
 
@@ -19,18 +20,25 @@ Regular expressions, or regex for short, are a series of special characters that
 - [Flags](#flags)
 - [Grouping and Capturing](#grouping-and-capturing)
 - [Bracket Expressions](#bracket-expressions)
+- [How to Match an Email](#how-to-match-an-email)
 <br>
 
 ## Regex Components
 <br>
 
-### Anchors - ^ and $
+### Anchors
+``` 
+^ and $
+```
 Both ^ \$ are considered to be Anchors
 The character after the anchor denotes the beginning of a string
 A string that ends with the characters before it is denoted by the $ anchor. It can be preceded by an exact string or a range of potential matches, much like with the character.
 <br>
 
-### Quantifiers - * + ? and {}
+### Quantifiers 
+``` 
+* + ? and {}
+``` 
 Quantifiers set the limits of the string that your regex matches (or an individual section of the string). They frequently include the minimum and maximum number of characters that your regex is looking for.
 
 Quantifiers are inherently greedy, meaning they match as many occurrences of particular patterns as possible. They include the following:
@@ -53,16 +61,20 @@ Curly brackets can provide three different ways to set limits for a match:
 Each of these quantifiers can be made lazy by adding the ? symbol after it, meaning it will match as few occurrences as possible.
 <br>
 
-### OR Operator - | or []
-
+### OR Operator 
+``` 
+| or []
+``` 
 | Syntax      | Description |
 | ----------- | ----------- |
 | a(b\|c)    | matches a string that has a followed by b or c (and captures b or c)        |
 | a[bc]    | same as previous, but without capturing b or c        |
 <br>
 
-### Character Classes - \d \w \s and .
-
+### Character Classes 
+``` 
+\d \w \s and .
+``` 
 | Syntax      | Description |
 | ----------- | ----------- |
 | \d    | matches a single character that is a digit        |
@@ -86,7 +98,10 @@ A regex usually comes within this form /abc/, where the search pattern is delimi
 
 <br>
 
-### Grouping and Capturing — ()
+### Grouping and Capturing
+``` 
+()
+``` 
 
 This operator is very useful when we need to extract information from strings or data using your preferred programming language. Any multiple occurrences captured by several groups will be exposed in the form of a classical array: we will access their values specifying using an index on the result of the match.
 
@@ -97,8 +112,10 @@ This operator is very useful when we need to extract information from strings or
 | a(?\<foo>bc)      | using ?<foo> we put a name to the group  |
 
 
-### Bracket Expressions — []
-
+### Bracket Expressions 
+``` 
+[]
+``` 
 | Syntax      | Description |
 | ----------- | ----------- |
 | [abc]     | matches a string that has either an a or a b or a c -> is the same as a|b|c       |
@@ -106,6 +123,34 @@ This operator is very useful when we need to extract information from strings or
 | [a-fA-F0-9]      | a string that represents a single hexadecimal digit, case insensitively  |
 | [0-9]%      |  a string that has a character from 0 to 9 before a % sign |
 | [^a-zA-Z]     | a string that has not a letter from a to z or from A to Z. In this case the ^ is used as negation of the expression  |
+<br>
+
+### How to Match an Email
+
+Using what we've learned so far, we can circle back to matching an email with regex.
+```
+/^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/
+```
+
+Each *set* of characters is surrounded brackets ().
+```
+([a-z0-9_.-]+)
+```
+
+This includes all numbers, lowercase characters, or special characters. Adding the + lets there be an infinite amount of any of those.
+```
+([\da-z.-]+)
+```
+The expression starts & ends with character escaping
+```
+/^
+$/
+```
+This set allows between 2-6 letters, any character, and any lowercase letter.
+```
+([a-z.]{2,6})
+```
+
 
 ## Author
 
